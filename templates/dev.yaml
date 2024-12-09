@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-chart
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: {{ .Values.global.environment.source.repoURL }}
+    targetRevision: HEAD # Could be a branch, tag, or commit SHA
+    path: {{ .Values.global.environment.source.path }}
+  destination:
+    server: https://kubernetes.default.svc # Cluster API server address
+    namespace: {{ .Values.global.environment.namespace}}  # Namespace where resources will be deployed
+  syncPolicy:
+    automated:
+      prune: true # Automatically delete resources that are no longer in the Git repo
+      selfHeal: true # Automatically sync resources if they drift from the Git repo
+    syncOptions:
+    - CreateNamespace=true # Automatically create namespace if it doesn't exist

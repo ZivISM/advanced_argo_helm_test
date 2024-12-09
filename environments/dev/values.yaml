@@ -1,0 +1,15 @@
+global:
+  environment:  
+    source:
+      repoURL: https://github.com/ZivISM/advanced_argo_helm_test.git
+      targetRevision: HEAD 
+      path: /myapp
+    destination:
+      server: https://kubernetes.default.svc 
+      namespace: myapp-dev 
+    syncPolicy:
+      automated:
+        prune: true 
+        selfHeal: true 
+    syncOptions:
+    - CreateNamespace=true 
