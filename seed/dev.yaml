@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/ZivISM/advanced_argo_helm_test.git
     targetRevision: HEAD # Could be a branch, tag, or commit SHA
-    path: environments/dev
+    path: ./environments/dev
   destination:
     server: https://kubernetes.default.svc # Cluster API server address
     namespace: myapp # Namespace where resources will be deployed
