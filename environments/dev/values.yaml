@@ -3,7 +3,7 @@ global:
     source:
       repoURL: https://github.com/ZivISM/advanced_argo_helm_test.git
       targetRevision: HEAD 
-      path: myapp/
+      path: myapp
     destination:
       server: https://kubernetes.default.svc 
       namespace: myapp-dev 
