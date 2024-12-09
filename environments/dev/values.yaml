@@ -6,7 +6,7 @@ global:
       path: myapp
     destination:
       server: https://kubernetes.default.svc 
-      namespace: myapp-dev 
+      namespace: myapp-dev-shlirabak
     syncPolicy:
       automated:
         prune: true 
