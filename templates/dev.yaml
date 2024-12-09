@@ -11,7 +11,7 @@ spec:
     path: {{ .Values.global.environment.source.path }}
   destination:
     server: https://kubernetes.default.svc # Cluster API server address
-    namespace: {{ .Values.global.environment.namespace}}  # Namespace where resources will be deployed
+    namespace: {{ .Values.global.environment.destination.namespace}}  # Namespace where resources will be deployed
   syncPolicy:
     automated:
       prune: true # Automatically delete resources that are no longer in the Git repo
